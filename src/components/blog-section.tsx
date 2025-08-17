@@ -43,7 +43,7 @@ export default function BlogSection() {
                 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
-                    <span className="text-gray-400 group-hover:text-amber-300 transition-colors text-base sm:text-md">
+                    <span className="text-gray-300/90 group-hover:text-amber-300 transition-colors text-base">
                       {post.title}
                     </span>
                     
