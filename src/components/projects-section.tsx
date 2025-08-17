@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { projects } from '@/data/projects';
 import { personalInfo } from '@/data/personal-info';
-import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Github, ExternalLink, ChevronRight } from 'lucide-react';
 import TechStack from './tech-stack';
 
 export default function ProjectsSection() {
@@ -11,7 +11,6 @@ export default function ProjectsSection() {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set(visibleProjects.length > 0 ? [visibleProjects[0].id] : [])
   );
-  const indexContainerRef = useRef<HTMLDivElement | null>(null);
 
   const toggleExpanded = (id: string) => {
     setExpandedItems(prev => {
@@ -25,14 +24,7 @@ export default function ProjectsSection() {
     });
   };
 
-  const getStatusIndicator = (status: string) => {
-    switch (status) {
-      case 'completed': return <div className="w-2 h-2 rounded-full bg-green-400"></div>;
-      case 'in-progress': return <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>;
-      case 'planned': return <div className="w-2 h-2 rounded-full bg-blue-400"></div>;
-      default: return <div className="w-2 h-2 rounded-full bg-gray-400"></div>;
-    }
-  };
+
 
   return (
     <section id="projects" className="mb-12 sm:mb-16">

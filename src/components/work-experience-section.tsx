@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { workExperience } from '@/data/work-experience';
-import { Calendar, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import TechStack from './tech-stack';
 

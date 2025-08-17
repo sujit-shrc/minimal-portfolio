@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { personalInfo } from '@/data/personal-info';
-import { Github, Linkedin, Twitter, Copy, Check, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Copy, Check } from 'lucide-react';
 import NewsletterModal from './newsletter-modal';
 
 export default function Footer() {
