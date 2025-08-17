@@ -23,14 +23,14 @@ export default function Footer() {
     <>
       <footer className="py-8 sm:py-10 border-t border-gray-800/30">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm text-gray-400">
+          <p className="text-base sm:text-md text-gray-400">
             found a bug, want to collaborate, or just want to chat about code?
           </p>
 
           <div className="mt-4 inline-flex items-center gap-3">
             <a
               href={`mailto:${personalInfo.social.email}`}
-              className="text-amber-400 hover:text-amber-300 font-medium transition-colors"
+              className="text-amber-400 hover:text-amber-300 font-medium transition-colors text-base sm:text-md"
             >
               {personalInfo.social.email}
             </a>
@@ -46,14 +46,14 @@ export default function Footer() {
             <span className="text-gray-700">|</span>
             <button
               onClick={() => setShowModal(true)}
-              className="text-amber-400 hover:text-amber-300 underline decoration-amber-400/30 hover:decoration-amber-300/50 text-xs sm:text-sm transition-colors"
+              className="text-amber-400 hover:text-amber-300 underline decoration-amber-400/30 hover:decoration-amber-300/50 text-sm sm:text-base transition-colors"
               aria-label="Open newsletter subscription"
             >
               subscribe ^_^
             </button>
           </div>
 
-          <p className="text-xs text-gray-600 italic mt-3">
+          <p className="text-sm sm:text-base text-gray-600 italic mt-3">
             (carrier pigeons work too, but expect some latency)
           </p>
 
@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-6">
-            <p className="text-xs text-gray-600">© 2025 • made with ❤️ — arch btw; with pacman, tiling, panes, and buffers &gt; tabs; :wq ^_^</p>
+            <p className="text-sm sm:text-base text-gray-600">© 2025 • made with ❤️ — arch btw; with pacman, tiling, panes, and buffers &gt; tabs; :wq ^_^</p>
           </div>
         </div>
       </footer>

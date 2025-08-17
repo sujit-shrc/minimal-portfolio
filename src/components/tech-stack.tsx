@@ -12,7 +12,7 @@ export default function TechStack({ technologies, className = '' }: TechStackPro
 
   return (
     <div className={`${className}`}>
-      <div className="flex flex-wrap items-center gap-0.5 text-xs font-mono leading-relaxed max-w-full">
+      <div className="flex flex-wrap items-center gap-0.5 text-sm sm:text-base font-mono leading-relaxed max-w-full">
         {technologies.map((tech, index) => (
           <div
             key={tech}
@@ -30,7 +30,7 @@ export default function TechStack({ technologies, className = '' }: TechStackPro
             
             {/* Pipe separator */}
             {index < technologies.length - 1 && (
-              <span className="text-gray-600 mx-1.5 group-hover:text-gray-500 transition-colors duration-200 font-light">
+              <span className="text-gray-500 mx-1.5 group-hover:text-gray-400 transition-colors duration-200 font-light">
                 |
               </span>
             )}

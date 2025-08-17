@@ -29,10 +29,10 @@ export default function WorkExperienceSection() {
   };
 
   return (
-    <section id="experience" className="mb-12 sm:mb-16 lg:mb-20">
+    <section id="experience" className="mb-12 sm:mb-16">
       <div className="accent-border mb-8 sm:mb-10">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-white">Career Journey</h2>
-        <p className="text-gray-400 text-sm sm:text-base mt-2">places that trusted me with their codebase :p</p>
+        <h2 className="text-3xl sm:text-4xl font-semibold text-white">Career Journey</h2>
+        <p className="text-gray-400 text-base sm:text-md mt-2">places that trusted me with their codebase :p</p>
       </div>
 
       <div className="space-y-1">
@@ -55,13 +55,13 @@ export default function WorkExperienceSection() {
                     toggleExpanded(work.id);
                   }
                 }}
-                className="relative flex items-start sm:items-center gap-2 sm:gap-3 px-1 py-2 sm:px-3 cursor-pointer select-none transition-all duration-300 hover:bg-amber-500/5 rounded-md focus:outline-none focus:bg-amber-500/5 group"
+                className="relative flex items-center gap-2 sm:gap-3 px-1 py-2 sm:px-3 cursor-pointer select-none transition-all duration-300 hover:bg-amber-500/5 rounded-md focus:outline-none focus:bg-amber-500/5 group"
               >
                 <span className="absolute inset-y-1 left-0 w-[2px] rounded bg-amber-400/0 group-hover:bg-amber-400/50 transition-all duration-300 pointer-events-none" aria-hidden />
                 {/* Terminal prompt */}
                 <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="text-green-400 font-mono text-sm">$</span>
-                  <span className="text-amber-400 font-mono text-sm">cd</span>
+                  <span className="text-green-400 font-mono text-base sm:text-md">$</span>
+                  <span className="text-amber-400 font-mono text-base sm:text-md">cd</span>
                 </div>
 
                 {/* Company logo */}
@@ -87,38 +87,36 @@ export default function WorkExperienceSection() {
 
                 {/* Enhanced terminal content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <div className="flex items-center gap-1.5 min-w-0 flex-1">
-                      <span className="text-cyan-400 font-mono text-sm group-hover:text-cyan-300 transition-colors truncate">
-                        {work.company.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
-                      </span>
-                      <span className="text-gray-500 font-mono text-sm">/</span>
-                      <span className="text-purple-400 font-mono text-sm group-hover:text-purple-300 transition-colors truncate">
-                        {work.role}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-xs text-gray-500 font-mono hidden sm:inline">
-                        {formatDate(work.startDate)} - {formatDate(work.endDate)}
-                      </span>
-                      <div className={`p-1 rounded transition-all duration-300 ${isExpanded
-                        ? 'text-amber-400 bg-amber-500/10 rotate-90'
-                        : 'text-gray-500 group-hover:text-amber-400 group-hover:bg-amber-500/5'
-                        }`}>
-                        <ChevronRight size={10} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center sm:hidden mt-1">
-                    <span className="text-xs text-gray-500 font-mono">
-                      {formatDate(work.startDate)} - {formatDate(work.endDate)}
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-cyan-400 font-mono text-base sm:text-md group-hover:text-cyan-300 transition-colors truncate">
+                      {work.company.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
+                    </span>
+                    <span className="text-gray-500 font-mono text-base sm:text-md">/</span>
+                    <span className="text-purple-400 font-mono text-sm sm:text-base group-hover:text-purple-300 transition-colors truncate">
+                      {work.role}
                     </span>
                   </div>
-
-
                 </div>
+
+                {/* Date and expand button - always on the right */}
+                <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
+                  <span className="text-xs sm:text-sm text-gray-500 font-mono hidden sm:inline">
+                    {formatDate(work.startDate)} - {formatDate(work.endDate)}
+                  </span>
+                  <div className={`p-1 rounded transition-all duration-300 ${isExpanded
+                    ? 'text-amber-400 bg-amber-500/10 rotate-90'
+                    : 'text-gray-500 group-hover:text-amber-400 group-hover:bg-amber-500/5'
+                    }`}>
+                    <ChevronRight size={10} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile date display */}
+              <div className="flex items-center sm:hidden mt-1 ml-8">
+                <span className="text-xs sm:text-sm text-gray-500 font-mono">
+                  {formatDate(work.startDate)} - {formatDate(work.endDate)}
+                </span>
               </div>
 
               {/* Connection line */}
@@ -131,14 +129,14 @@ export default function WorkExperienceSection() {
                 <div id={contentId} className="ml-2 sm:ml-4 mb-4 animate-in fade-in duration-300">
                   <div className="border-l-2 border-amber-400/30 pl-3 sm:pl-6 space-y-6">
                     {work.description && (
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed text-base sm:text-md">
                         {work.description}
                       </p>
                     )}
 
                     {work.achievements && work.achievements.length > 0 && (
                       <div>
-                        <h4 className="text-base font-semibold text-amber-400 mb-4 flex items-center gap-2">
+                        <h4 className="text-base sm:text-md font-semibold text-amber-400 mb-4 flex items-center gap-2">
                           <span className="w-1 h-4 bg-amber-400 rounded-full"></span>
                           Key Achievements
                         </h4>
@@ -146,9 +144,9 @@ export default function WorkExperienceSection() {
                           {work.achievements.map((achievement, idx) => (
                             <li
                               key={idx}
-                              className="text-sm text-gray-400 flex items-start gap-3 hover:text-gray-300 transition-colors duration-200"
+                              className="text-base sm:text-md text-gray-400 flex items-start gap-3 hover:text-gray-300 transition-colors duration-200"
                             >
-                              <span className="text-amber-400 mt-1 text-xs font-bold">▸</span>
+                              <span className="text-amber-400 mt-1 text-sm sm:text-base font-bold">▸</span>
                               <span className="leading-relaxed">{achievement}</span>
                             </li>
                           ))}
@@ -158,7 +156,7 @@ export default function WorkExperienceSection() {
 
                     {work.technologies && work.technologies.length > 0 && (
                       <div>
-                        <h4 className="text-base font-semibold text-amber-400 mb-4 flex items-center gap-2">
+                        <h4 className="text-base sm:text-md font-semibold text-amber-400 mb-4 flex items-center gap-2">
                           <span className="w-1 h-4 bg-amber-400 rounded-full"></span>
                           Tech Stack
                         </h4>

@@ -35,19 +35,17 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="mb-12 sm:mb-16 lg:mb-20">
+    <section id="projects" className="mb-12 sm:mb-16">
       <div className="accent-border mb-8 sm:mb-10">
         <div className="flex items-center gap-3 mb-2">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-white">Selected Work</h2>
-          <div className="hidden sm:flex items-center gap-1 text-xs font-mono text-gray-500 bg-gray-900/40 px-2 py-1 rounded">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white">Selected Work</h2>
+          <div className="hidden sm:flex items-center gap-1 text-sm sm:text-base font-mono text-gray-500 bg-gray-900/40 px-2 py-1 rounded">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
             <span>{visibleProjects.length} active</span>
           </div>
         </div>
-        <p className="text-gray-400 text-sm sm:text-base mt-2">things I&#39;ve built that don&#39;t completely suck :p</p>
+        <p className="text-gray-400 text-base sm:text-md mt-2">things I&#39;ve built that don&#39;t completely suck :p</p>
       </div>
-
-
 
       {/* Projects list in terminal ls format */}
       <div className="space-y-1">
@@ -69,54 +67,51 @@ export default function ProjectsSection() {
                     toggleExpanded(project.id);
                   }
                 }}
-                className="relative flex items-start sm:items-center gap-2 sm:gap-3 px-1 py-2 sm:px-3 cursor-pointer select-none transition-all duration-300 hover:bg-amber-500/5 rounded-md focus:outline-none focus:bg-amber-500/5"
+                className="relative flex items-center gap-2 sm:gap-3 px-1 py-2 sm:px-3 cursor-pointer select-none transition-all duration-300 hover:bg-amber-500/5 rounded-md focus:outline-none focus:bg-amber-500/5"
               >
                 <span className="absolute inset-y-1 left-0 w-[2px] rounded bg-amber-400/0 group-hover:bg-amber-400/50 transition-all duration-300 pointer-events-none" aria-hidden />
                 {/* Terminal prompt */}
                 <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="text-green-400 font-mono text-sm">$</span>
-                  <span className="text-amber-400 font-mono text-sm">z</span>
+                  <span className="text-green-400 font-mono text-base sm:text-md">$</span>
+                  <span className="text-amber-400 font-mono text-base sm:text-md">z</span>
                 </div>
-
-
 
                 {/* Project content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                    <div className="flex items-center gap-1.5 min-w-0 flex-1">
-                      <span className="text-cyan-400 font-mono text-sm group-hover:text-cyan-300 transition-colors truncate">
-                        {project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
-                      </span>
-                      {project.featured && (
-                        <span className="text-amber-400 text-xs">★</span>
-                      )}
-                      {/* Status indicator after title/featured */}
-                      <div className={`w-2 h-2 rounded-full ${project.status === 'completed' ? 'bg-green-400' :
-                        project.status === 'in-progress' ? 'bg-amber-400 animate-pulse' :
-                          project.status === 'planned' ? 'bg-blue-400' :
-                            'bg-gray-400'
-                        }`} />
-                    </div>
-
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-xs text-gray-500 font-mono hidden sm:inline">
-                        {project.startDate} - {project.endDate || 'Present'}
-                      </span>
-                      <div className={`p-1 rounded transition-all duration-300 ${isExpanded
-                        ? 'text-amber-400 bg-amber-500/10 rotate-90'
-                        : 'text-gray-500 group-hover:text-amber-400 group-hover:bg-amber-500/5'
-                        }`}>
-                        <ChevronRight size={10} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center sm:hidden mt-1">
-                    <span className="text-xs text-gray-500 font-mono">
-                      {project.startDate} - {project.endDate || 'Present'}
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-cyan-400 font-mono text-base sm:text-md group-hover:text-cyan-300 transition-colors truncate">
+                      {project.title.toLowerCase()}
                     </span>
+                    {project.featured && (
+                      <span className="text-amber-400 text-sm sm:text-base">★</span>
+                    )}
+                    {/* Status indicator after title/featured */}
+                    <div className={`w-2 h-2 rounded-full ${project.status === 'completed' ? 'bg-green-400' :
+                      project.status === 'in-progress' ? 'bg-amber-400 animate-pulse' :
+                        'bg-blue-400'
+                      }`} />
                   </div>
                 </div>
+
+                {/* Date and expand button - always on the right */}
+                <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
+                  <span className="text-xs sm:text-sm text-gray-500 font-mono hidden sm:inline">
+                    {project.startDate} - {project.endDate || 'Present'}
+                  </span>
+                  <div className={`p-1 rounded transition-all duration-300 ${isExpanded
+                    ? 'text-amber-400 bg-amber-500/10 rotate-90'
+                    : 'text-gray-500 group-hover:text-amber-400 group-hover:bg-amber-500/5'
+                    }`}>
+                    <ChevronRight size={10} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile date display */}
+              <div className="flex items-center sm:hidden mt-1 ml-8">
+                <span className="text-xs sm:text-sm text-gray-500 font-mono">
+                  {project.startDate} - {project.endDate || 'Present'}
+                </span>
               </div>
 
               {/* Expanded content right below */}
@@ -125,7 +120,7 @@ export default function ProjectsSection() {
                   <div className="border-l-2 border-amber-400/30 pl-3 sm:pl-6 space-y-6">
                     {/* Project description */}
                     {project.description && (
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed text-base sm:text-md">
                         {project.description}
                       </p>
                     )}
@@ -133,7 +128,7 @@ export default function ProjectsSection() {
                     {/* Key Features/Achievements */}
                     {project.achievements && project.achievements.length > 0 && (
                       <div>
-                        <h4 className="text-base font-semibold text-amber-400 mb-4 flex items-center gap-2">
+                        <h4 className="text-md sm:text-xl font-semibold text-amber-400 mb-4 flex items-center gap-2">
                           <span className="w-1 h-4 bg-amber-400 rounded-full"></span>
                           Key Features
                         </h4>
@@ -141,9 +136,9 @@ export default function ProjectsSection() {
                           {project.achievements.map((achievement, idx) => (
                             <li
                               key={idx}
-                              className="text-sm text-gray-400 flex items-start gap-3 hover:text-gray-300 transition-colors duration-200"
+                              className="text-base sm:text-md text-gray-400 flex items-start gap-3 hover:text-gray-300 transition-colors duration-200"
                             >
-                              <span className="text-amber-400 mt-1 text-xs font-bold">▸</span>
+                              <span className="text-amber-400 mt-1 text-sm sm:text-base font-bold">▸</span>
                               <span className="leading-relaxed">{achievement}</span>
                             </li>
                           ))}
@@ -154,7 +149,7 @@ export default function ProjectsSection() {
                     {/* Technologies */}
                     {project.technologies && project.technologies.length > 0 && (
                       <div>
-                        <h4 className="text-base font-semibold text-amber-400 mb-4 flex items-center gap-2">
+                        <h4 className="text-md sm:text-xl font-semibold text-amber-400 mb-4 flex items-center gap-2">
                           <span className="w-1 h-4 bg-amber-400 rounded-full"></span>
                           Tech Stack
                         </h4>
@@ -170,7 +165,7 @@ export default function ProjectsSection() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-amber-300 transition-colors"
+                            className="inline-flex items-center gap-2 text-base sm:text-md text-gray-400 hover:text-amber-300 transition-colors"
                           >
                             <Github size={14} />
                             <span>View Code</span>
@@ -181,7 +176,7 @@ export default function ProjectsSection() {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-amber-300 transition-colors"
+                            className="inline-flex items-center gap-2 text-base sm:text-md text-gray-400 hover:text-amber-300 transition-colors"
                           >
                             <ExternalLink size={14} />
                             <span>View Live</span>
@@ -202,11 +197,9 @@ export default function ProjectsSection() {
         })}
       </div>
 
-
-
       {/* Enhanced view more */}
-      <div className="mt-8 sm:mt-10 lg:mt-12 text-center">
-        <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-gray-500 text-base group">
+      <div className="mt-8 sm:mt-10 text-center">
+        <div className="inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-gray-500 text-base sm:text-md group">
           <span>more experiments on</span>
           <a
             href={personalInfo.social.github}
