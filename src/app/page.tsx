@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <ScrollProgress />
-      <main id="main" className="max-w-4xl mx-auto px-3 sm:px-6 py-12 space-y-24">
+      <main id="main" className="max-w-4xl mx-auto px-3 sm:px-6 py-12 space-y-16">
         <HeroSection />
         <WorkExperienceSection />
         <ProjectsSection />
