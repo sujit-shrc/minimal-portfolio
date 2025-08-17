@@ -24,10 +24,10 @@ export default function HeroSection() {
                                 <span className="text-yellow-400 font-mono text-base sm:text-md">~/about</span>
                             </div>
                             <div className="ml-2 sm:ml-4 text-gray-300/90 leading-relaxed text-base sm:text-lg">
-                                i'm a <span className="text-accent">software developer</span> who fell in love with code when i saw it fix real problems. what began as simple javascript grew into web apps, browser extensions, and mobile screens people use every day :p
+                                i'm a <span className="text-accent">software developer</span> who fell in love with code when i realized it could fix real problems. what began as simple javascript grew into web apps, browser extensions, and mobile screens that make sense :p
                             </div>
                             <div className="ml-2 sm:ml-4 text-gray-300/90 leading-relaxed text-base sm:text-lg mt-2 sm:mt-3">
-                                today i run <span className="text-accent">microservices</span> that stay reliable under load. turborepo keeps the repo tidy, docker wraps each deploy, and consul helps services talk without drama. i linked cashfree, phonepe and other payment gateways so a shop could take payments while its owner slept ^-^
+                                i architect <span className="text-accent">microservices</span> that stay reliable under pressure. turborepo keeps the repo organized, docker makes deployments predictable, and consul helps services talk without drama. i've built npm packages like logger and error-handler for consistent logging and error handling across microservices.
                             </div>
                             <div className="ml-2 sm:ml-4 text-gray-300/90 leading-relaxed text-base sm:text-lg mt-2 sm:mt-3">
                                 my linux story started when windows froze my old laptop. ubuntu rescued me, then i tried kali, parrot, fedora, and garuda. i finally stopped hopping when i met <span className="text-accent">arch</span>—rolling updates, nothing extra. i still trim nginx configs until they feel just right and write scrapers that never wake me at 3 am :D
@@ -39,7 +39,8 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                {/* Skills - Categorized terminal style */}
+                {/* Skills */}
+                
                 <div>
                     <div className="max-w-4xl">
                         <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">

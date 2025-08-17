@@ -26,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased text-white selection:bg-gray-700">
-        <a className="skip-link" href="#main">Skip to content</a>
         {children}
       </body>
     </html>
