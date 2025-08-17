@@ -1,3 +1,8 @@
+export interface Skill {
+  name: string;
+  highlight?: boolean;
+}
+
 export const personalInfo = {
   name: "Sujit Kumar",
   intro: "Hello, I'm Sujit Kumar",
@@ -14,15 +19,40 @@ export const personalInfo = {
     "devops",
     "technical writing"
   ],
-  skills: [
-    "JavaScript", "TypeScript", "Python", "Bash",
-    "React.js", "Next.js", "React Native",
-    "Node.js", "Express.js", "FastAPI",
-    "Docker", "NGINX", "HashiCorp Consul",
-    "AWS (EC2, S3)", "Supabase", "Cloudflare",
-    "Git", "GitHub Actions", "PM2",
-    "Arch Linux", "Debian", "Neovim"
-  ],
+  skills: {
+    "Languages": [
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "Python" },
+      { name: "Bash", highlight: true }
+    ],
+    "Frontend": [
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "React Native", highlight: true }
+    ],
+    "Backend": [
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "FastAPI" }
+    ],
+    "DevOps": [
+      { name: "Docker" },
+      { name: "NGINX" },
+      { name: "Consul", highlight: true },
+      { name: "AWS (EC2, S3)" },
+      { name: "Cloudflare", highlight: true }
+    ],
+    "Tools": [
+      { name: "Git" },
+      { name: "GitHub Actions", highlight: true },
+      { name: "PM2" },
+      { name: "Arch Linux" },
+      { name: "Debian" },
+      { name: "Neovim" },
+      { name: "Supabase" }
+    ]
+  } as Record<string, Skill[]>,
   social: {
     github: "https://github.com/sujit-shrc",
     linkedin: "https://linkedin.com/in/sujit-shrc",

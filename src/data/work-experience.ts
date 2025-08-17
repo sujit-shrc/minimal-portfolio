@@ -20,38 +20,38 @@ export const workExperience: WorkExperience[] = [
         startDate: "Oct 2024",
         endDate: "Jun 2025",
         current: true,
-        description: "Built a microservices-based web application with real-time features, payment processing, and automated deployment pipelines.",
+        description: "Contributed to a distributed microservices-based platform with modular architecture, real-time features, secure payment processing, and automated deployment pipelines.",
         achievements: [
-            "Architected microservices with Turborepo for user management, event handling, payments, and validation services",
-            "Implemented HashiCorp Consul for service discovery and seamless inter-service communication",
-            "Containerized all services with Docker for consistent development and production environments",
-            "Configured Nginx for request routing and SSL termination with security best practices",
-            "Integrated third-party payment gateway and messaging services for user notifications",
-            "Set up Supabase for authentication and database with AWS S3 for file storage",
-            "Built automated deployment pipelines and implemented Cloudflare tunnel for DDoS protection",
-            "Optimized API response times by 20% through debugging complex inter-service communication issues"
+            "Architected microservices with Turborepo for user management, event handling, payments, and validation modules",
+            "Implemented HashiCorp Consul for service discovery and smooth inter-service communication",
+            "Containerized all services with Docker for consistent and reliable environments across dev and prod",
+            "Configured Nginx as a reverse proxy for request routing and SSL termination with security best practices",
+            "Integrated third-party payment gateway and messaging APIs for user notifications and alerts",
+            "Used Supabase for authentication and database, with AWS S3 for file storage and calendar ICS support",
+            "Built automated CI/CD pipelines and implemented Cloudflare tunnel for DDoS protection and security",
+            "Debugged complex inter-service communication issues and optimized API response times by 20%"
         ],
-        technologies: ["JavaScript", "TypeScript", "Node.js", "React", "Turborepo", "Docker", "Nginx", "HashiCorp Consul", "Supabase", "AWS S3", "Cloudflare"]
+        technologies: ["JavaScript", "TypeScript", "Node.js", "React", "Turborepo", "Docker", "Nginx", "Consul", "Supabase", "AWS S3", "Cloudflare"]
     },
     {
         id: "2",
         role: "SDE-1",
-        company: "Ibharat.org",
+        company: "IBharat",
         logo: "/ibharat.jpeg",
         startDate: "May 2024",
         endDate: "Oct 2024",
-        description: "Re-engineered ibharat.org's frontend and built a comprehensive news aggregation platform with automated content management and search functionality.",
+        description: "Rebuilt the complete frontend and automated crawling pipeline for search engine platform.",
         achievements: [
-            "Re-engineered ibharat.org's frontend with Next.js and React, creating an explore section similar to Google News",
-            "Automated news crawling from dynamic sources using custom scrapers and sitemap parsing",
-            "Built comprehensive admin dashboard for content management and manual overrides",
-            "Designed efficient database schema for storing and searching news articles at scale",
-            "Configured cron jobs for automatic content updates and daily maintenance tasks",
-            "Achieved Lighthouse score over 90 through SSR optimization and strategic caching",
-            "Containerized applications with Docker and established CI/CD pipelines via GitHub Actions",
-            "Handled edge cases in news parsing when sources changed HTML structure unexpectedly"
+            "Redesigned and re-engineered the frontend with Next.js and React, creating an explore section for discovering content similar to Google Search",
+            "Automated large-scale crawling from dynamic websites using custom scrapers, parsers, and sitemap processing",
+            "Built an advanced admin dashboard for managing sources, indexing, and manual content overrides",
+            "Designed and optimized database schema to index, store, and retrieve search results efficiently",
+            "Configured cron jobs for continuous crawling, scheduled updates, and daily maintenance tasks",
+            "Improved frontend performance to achieve Lighthouse score above 90 using SSR and caching strategies",
+            "Containerized applications with Docker and set up CI/CD pipelines through GitHub Actions workflows",
+            "Handled complex edge cases in crawling and parsing when external sites updated or broke their HTML structures"
         ],
-        technologies: ["Next.js", "React", "Node.js", "Docker", "GitHub Actions", "Custom Scrapers", "Cron Jobs", "SSR", "Database Design"]
+        technologies: ["Next.js", "React", "Node.js", "Docker", "GitHub Actions", "Custom Scrapers", "Cron Jobs", "SSR", "FastAPI"]
     },
     {
         id: "3",
@@ -60,16 +60,16 @@ export const workExperience: WorkExperience[] = [
         logo: "/durbhasi-gurukulam.jpeg",
         startDate: "Jun 2023",
         endDate: "Dec 2023",
-        description: "Developed backend infrastructure and payment systems for educational platform with focus on security and scalability.",
+        description: "Developed backend infrastructure and payment systems for an educational platform with a focus on scalability, security, and performance optimization.",
         achievements: [
-            "Implemented Role-Based Access Control (RBAC) system for user permissions and security",
-            "Built rate limiting middleware to prevent API abuse and ensure system stability",
-            "Integrated PhonePe payment gateway for secure transaction processing",
-            "Managed DNS configuration and domain setup for production deployments",
-            "Developed automated deployment pipelines for continuous integration and delivery",
-            "Created comprehensive API documentation and testing suites",
-            "Optimized database queries and implemented caching strategies for better performance",
-            "Collaborated with cross-functional teams to deliver features on schedule"
+            "Implemented Role-Based Access Control (RBAC) system for user permissions and application security",
+            "Built rate limiting middleware to prevent API abuse and ensure high system stability",
+            "Integrated PhonePe payment gateway for secure and reliable transaction processing",
+            "Configured DNS settings and domain management for smooth production deployments",
+            "Set up automated deployment pipelines for continuous integration and delivery workflows",
+            "Created detailed API documentation and comprehensive testing suites for developers",
+            "Optimized database queries and added caching strategies to enhance overall performance",
+            "Collaborated closely with cross-functional teams to deliver planned features on schedule"
         ],
         technologies: ["Node.js", "Express.js", "MongoDB", "Redis", "Docker", "AWS", "PhonePe API", "JWT", "Rate Limiting", "RBAC"]
     }
